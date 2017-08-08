@@ -16,7 +16,7 @@
                 <button ng-click="addPrettyPhrase()">Add Pretty Words</button>
             </div>
             <div id="randomWordDiv">
-                <span ng-repeat="word in wordPool track by $index" class="{{word.style}}">{{word.name}} </span>
+                <span ng-repeat="word in words track by $index" class="{{word.style}}">{{word.name}} </span>
             </div>
         </main>
         <script src="lib/angular.min.js" charset="utf-8"></script>

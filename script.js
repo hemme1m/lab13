@@ -1,9 +1,9 @@
 var app = angular.module('randomApp', []);
 
 app.controller('wordController', function($scope) {
-	$scope.words = ["mommy", "daddy", "potty", "toys", "candy", "cake", "ice cream", "nana boo boo", "ouch", "wahhh", "woops", "wowza"];
+	$scope.wordPool = ["mommy", "daddy", "potty", "toys", "candy", "cake", "ice cream", "nana boo boo", "ouch", "wahhh", "woops", "wowza"];
 	
-	$scope.phrases = [
+	$scope.phrasePool = [
 	"wubba lubba dub dub",
 	"rubber baby buggy bumpers",
 	"i want ice cream",
@@ -19,32 +19,32 @@ app.controller('wordController', function($scope) {
 
 	$scope.styles = ["red", "blue", "green", "purple", "gold", "brown", "orange", "dotted", "solid", "bold", "underline"];
 
-	$scope.wordPool = [];
+	$scope.words = [];
 
 	$scope.addWord = function() {
-		var randomWord = $scope.words[Math.floor(Math.random() * (10-0 + 1) + 0)];
+		var randomWord = $scope.wordPool[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomWordObj = {name: randomWord, style: "nostyle"}
-		$scope.wordPool.push(randomWordObj);
+		$scope.words.push(randomWordObj);
 	};
 
 	$scope.addPrettyWord = function() {
-		var randomWord = $scope.words[Math.floor(Math.random() * (10-0 + 1) + 0)];
+		var randomWord = $scope.wordPool[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomStyle = $scope.styles[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomWordObj = {name: randomWord, style: randomStyle};
-		$scope.wordPool.push(randomWordObj);
+		$scope.words.push(randomWordObj);
 	};
 
 	$scope.addPhrase = function () {
-		var randomPhrase = $scope.phrases[Math.floor(Math.random() * (10-0 + 1) + 0)];
+		var randomPhrase = $scope.phrasePool[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomPhraseObj = {name: randomPhrase, style: "nostyle"}
-		$scope.wordPool.push(randomPhraseObj);
+		$scope.words.push(randomPhraseObj);
 	};
 
 	$scope.addPrettyPhrase = function() {
-		var randomPhrase = $scope.phrases[Math.floor(Math.random() * (10-0 + 1) + 0)];
+		var randomPhrase = $scope.phrasePool[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomStyle = $scope.styles[Math.floor(Math.random() * (10-0 + 1) + 0)];
 		var randomPhraseObj = {name: randomPhrase, style: randomStyle};
-		$scope.wordPool.push(randomPhraseObj);
+		$scope.words.push(randomPhraseObj);
 	};
 
 });
