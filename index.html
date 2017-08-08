@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="randomApp" ng-controller="wordController">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lab 13 | 6 Year Old Simulator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <div id="buttonDiv">
+                <button ng-click="addWord()">Add Word</button>
+                <button ng-click="addPrettyWord()">Add Pretty Word</button>
+                <button ng-click="addPhrase()">Add Words</button>
+                <button ng-click="addPrettyPhrase()">Add Pretty Words</button>
+            </div>
+            <div id="randomWordDiv">
+                <span ng-repeat="word in wordPool track by $index" class="{{word.style}}">{{word.name}} </span>
+            </div>
+        </main>
+        <script src="lib/angular.min.js" charset="utf-8"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
